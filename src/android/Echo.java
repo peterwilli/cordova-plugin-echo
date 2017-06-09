@@ -7,7 +7,7 @@ import org.json.JSONException;
 public class Echo extends CordovaPlugin {
 
     @Override
-    public boolean execute(String action, JSONArray data, final CallbackContext callbackContext) throws JSONException {
+    public boolean execute(final String action, final JSONArray data, final CallbackContext callbackContext) throws JSONException {
 
         if (action.equals("threadFunction")) {
             // Get the echo argument
@@ -36,7 +36,7 @@ public class Echo extends CordovaPlugin {
     }
 
     // Validate the message and send callback accordingly.
-    private void echo(String message, final CallbackContext callbackContext) {
+    private void echo(final String message, final CallbackContext callbackContext) {
         if (message != null && message.length() > 0) { 
             callbackContext.success(message);
         } else {
