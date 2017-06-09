@@ -36,7 +36,7 @@ public class Echo extends CordovaPlugin {
     }
 
     // Validate the message and send callback accordingly.
-    private void echo(String message, final FuCallbackContext callbackContext) {
+    private void echo(String message, final CallbackContext callbackContext) {
         if (message != null && message.length() > 0) { 
             callbackContext.success(message);
         } else {
