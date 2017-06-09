@@ -21,8 +21,12 @@ public class Echo extends CordovaPlugin {
             
                 public void run() {  // Thread-safe.
                     // Get the echo argument
-                    String echoArg = data.getString(0);
-                    Echo.this.echo(echoArg, callbackContext);
+                    try {
+                        String echoArg = data.getString(0);
+                        Echo.this.echo(echoArg, callbackContext);
+                    } catch (JSONException e) {
+                        
+                    }
                 }
 
             });
