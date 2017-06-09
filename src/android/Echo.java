@@ -12,7 +12,7 @@ public class Echo extends CordovaPlugin {
         if (action.equals("threadFunction")) {
             // Get the echo argument
             String echoArg = data.getString(0);
-            this.echo(echoArg, callbackContext);
+            Echo.this.echo(echoArg, callbackContext);
             return true;
 
         } else if (action.equals("nonThreadFunction")) { //
@@ -22,7 +22,7 @@ public class Echo extends CordovaPlugin {
                 public void run() {  // Thread-safe.
                     // Get the echo argument
                     String echoArg = data.getString(0);
-                    this.echo(echoArg, callbackContext);
+                    Echo.this.echo(echoArg, callbackContext);
                 }
 
             });
